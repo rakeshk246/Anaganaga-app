@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anaganagaa - AI Storytelling for Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f0f9ff; }
+        .font-brand { font-family: 'Baloo 2', cursive; }
+        .story-content p { font-family: 'Baloo 2', cursive; font-weight: 500; color: #334155; margin-bottom: 1.25rem; line-height: 1.8; }
+        .story-word { transition: background-color 0.3s ease, color 0.3s ease; padding: 2px 1px; border-radius: 3px; }
+        .highlight-word { background-color: #06b6d4; color: white; }
+        .loader { border: 5px solid #f3f3f3; border-top: 5px solid #22d3ee; border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .custom-btn { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .custom-btn:hover { transform: translateY(-3px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        .custom-btn:active { transform: translateY(-1px); }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center"><div class="flex-shrink-0"><h1 class="font-brand text-4xl font-extrabold text-cyan-600">Anaganagaa</h1></div></div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-base font-medium">About</a>
+                        <a href="#story-generator" class="text-slate-600 hover:text-cyan-600 px-3 py-2 rounded-md text-base font-medium">Story Generator</a>
+                        <a href="#" class="text-slate-400 cursor-not-allowed px-3 py-2 rounded-md text-base font-medium" title="Coming Soon">Languages</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <section class="text-center mb-16">
+            <h2 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 font-brand"><span class="block">Any Topic, an</span><span class="block text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-600">Amazing Story.</span></h2>
+            <p class="mt-5 max-w-2xl mx-auto text-lg text-slate-500">From photosynthesis to black holes, we make learning a magical adventure through the power of storytelling and AI!</p>
+        </section>
+
+        <!-- === NEW: About/Mission Section === -->
+        <section id="about" class="max-w-5xl mx-auto mb-20 text-center py-12 px-4 sm:px-6 lg:px-8 bg-amber-50 rounded-3xl">
+            <h2 class="text-4xl font-extrabold font-brand text-amber-700">Our Magical Mission</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-amber-600">We believe learning should be an adventure, not a chore. Our goal is to make education joyful and accessible for every child by turning complex topics into simple, fun, and visual stories.</p>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-amber-500 text-white mb-4 shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" /></svg></div>
+                    <h4 class="text-xl font-brand font-bold text-slate-800">Make Learning Fun</h4>
+                    <p class="mt-2 text-slate-500">We turn boring textbook chapters into exciting stories with fun characters and amazing plots.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-500 text-white mb-4 shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a6 6 0 00-6 6v3.586l-1.707 1.707A1 1 0 003 15v1a1 1 0 001 1h12a1 1 0 001-1v-1a1 1 0 00-.293-.707L14 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" /></svg></div>
+                    <h4 class="text-xl font-brand font-bold text-slate-800">Simplify the Complex</h4>
+                    <p class="mt-2 text-slate-500">Our AI uses simple analogies to explain tough topics like physics and biology in a way anyone can understand.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-rose-500 text-white mb-4 shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg></div>
+                    <h4 class="text-xl font-brand font-bold text-slate-800">Spark Curiosity</h4>
+                    <p class="mt-2 text-slate-500">By making learning magical, we hope to inspire a lifelong love of discovery and knowledge in every student.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Generator -->
+        <section id="story-generator" class="max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-3xl shadow-2xl shadow-cyan-100">
+            <div class="mb-6">
+                <label for="topic-input" class="block text-xl font-bold text-slate-700 text-center font-brand">What magical story shall we create?</label>
+                <p class="text-sm text-slate-500 text-center mb-4">E.g., "Why is the sky blue?", "The water cycle"</p>
+                <div class="mt-2 flex flex-col sm:flex-row gap-3">
+                    <input type="text" name="topic" id="topic-input" class="flex-grow block w-full rounded-xl border-slate-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-lg p-4" placeholder="Type a topic here...">
+                    <button id="generate-story-btn" class="custom-btn inline-flex items-center justify-center rounded-xl border border-transparent bg-cyan-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-cyan-500/30 hover:bg-cyan-600">Create Story!</button>
+                </div>
+                <p id="error-message" class="text-red-500 text-sm mt-2 text-center h-4"></p>
+            </div>
+
+            <!-- Story Output -->
+            <div id="story-output" class="mt-8 hidden">
+                <div class="flex justify-center items-center my-8" id="loader-container"><div class="loader"></div><p class="ml-4 text-slate-600 font-semibold">Our AI storyteller is dreaming up your tale...</p></div>
+                <div id="story-result" class="hidden">
+                    <div id="image-container" class="mb-6 hidden"><img id="story-image" src="" alt="A scene from the story" class="rounded-2xl shadow-lg mx-auto max-w-full h-auto"></div>
+                    <h3 id="story-title" class="text-3xl font-bold font-brand text-slate-800 mb-4 text-center"></h3>
+                    <div class="mb-4 border-b border-slate-200">
+                        <nav class="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
+                            <button class="tab-btn border-cyan-500 text-cyan-600 flex items-center gap-2 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-base" data-tab="text">📖 Story Text</button>
+                            <button class="tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 flex items-center gap-2 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-base" data-tab="audio">🎧 Voice Narration</button>
+                            <button class="tab-btn border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300 flex items-center gap-2 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-base" data-tab="video">🎬 Video</button>
+                        </nav>
+                    </div>
+                    <div id="text-content" class="tab-content story-content text-lg"></div>
+                    <div id="audio-content" class="tab-content hidden text-center p-8 bg-slate-100 rounded-xl">
+                        <h4 class="text-xl font-semibold text-slate-700">Listen to the Story</h4><p class="mt-2 text-slate-500 mb-6">Press play to hear the story read aloud!</p><div id="tts-controls" class="flex items-center justify-center gap-4"></div>
+                    </div>
+                    <!-- === UPDATED: Video "Coming Soon" Tab Content === -->
+                    <div id="video-content" class="tab-content hidden text-center p-8 bg-slate-100 rounded-xl">
+                        <h4 class="text-xl font-semibold text-slate-700">Animated Video Story 🎬</h4>
+                        <p class="mt-2 text-slate-500">Imagine watching your lesson as a mini-movie! This magical feature is coming soon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white/50 mt-20"><div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 text-center lg:px-8"><p class="text-base text-slate-500">© 2025 Anaganagaa. Built with ❤️ for the curious minds of tomorrow.</p></div></footer>
+
+    <script>
+        // --- DOM Elements ---
+        const topicInput = document.getElementById('topic-input'), generateBtn = document.getElementById('generate-story-btn'), errorMessage = document.getElementById('error-message'), storyOutput = document.getElementById('story-output'), loader = document.getElementById('loader-container'), storyResult = document.getElementById('story-result'), storyTitle = document.getElementById('story-title'), storyTextContent = document.getElementById('text-content'), ttsControls = document.getElementById('tts-controls'), tabs = document.querySelectorAll('.tab-btn'), tabContents = document.querySelectorAll('.tab-content'), imageContainer = document.getElementById('image-container'), storyImage = document.getElementById('story-image');
+        
+        let storyPlainText = '', wordBoundaries = [], currentWordIndex = 0;
+        
+        // --- Event Listeners ---
+        generateBtn.addEventListener('click', handleStoryGeneration);
+        topicInput.addEventListener('keyup', (event) => { if (event.key === 'Enter') handleStoryGeneration(); });
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                if (window.speechSynthesis.speaking && this.dataset.tab !== 'audio' && this.dataset.tab !== 'text') { window.speechSynthesis.cancel(); }
+                tabs.forEach(t => { t.classList.remove('border-cyan-500', 'text-cyan-600'); t.classList.add('border-transparent', 'text-slate-500', 'hover:text-slate-700', 'hover:border-slate-300'); });
+                tabContents.forEach(c => c.classList.add('hidden'));
+                this.classList.add('border-cyan-500', 'text-cyan-600'); this.classList.remove('border-transparent', 'text-slate-500');
+                document.getElementById(`${this.dataset.tab}-content`).classList.remove('hidden');
+            });
+        });
+
+        async function handleStoryGeneration() {
+            const topic = topicInput.value.trim();
+            if (!topic) { showError('Please enter a topic!'); return; }
+            clearError();
+            if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
+            storyResult.classList.add('hidden'); storyOutput.classList.remove('hidden'); loader.style.display = 'flex'; storyTextContent.innerHTML = ''; storyTitle.textContent = ''; imageContainer.classList.add('hidden'); storyImage.src = '';
+            
+            const backendUrl = 'http://localhost:3000/api/generate';
+
+            try {
+                const response = await fetch(backendUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ topic: topic }) });
+                if (!response.ok) { const errData = await response.json(); throw new Error(errData.error || `Server error: ${response.status}`); }
+                const data = await response.json();
+                const { story, imageUrl } = data;
+                if (imageUrl) { storyImage.src = imageUrl; imageContainer.classList.remove('hidden'); }
+                displayStory(topic, story);
+                setupSpeechSynthesisControls();
+            } catch (error) { console.error("Error from backend:", error); showError(error.message || "An unknown error occurred.");
+            } finally { loader.style.display = 'none'; storyResult.classList.remove('hidden'); }
+        }
+
+        function displayStory(topic, story) {
+            storyTitle.textContent = `A Story About: ${topic}`;
+            storyPlainText = story; wordBoundaries = []; let wordCounter = 0; let charCounter = 0;
+            const formattedStory = story.split('\n').filter(p => p.trim() !== '').map(paragraph => {
+                const words = paragraph.split(' ').map(word => {
+                    if (word.trim() === '') return '';
+                    wordBoundaries.push({ word: word, startChar: charCounter });
+                    const wordSpan = `<span id="word-${wordCounter}" class="story-word">${word}</span>`;
+                    wordCounter++; charCounter += word.length + 1;
+                    return wordSpan;
+                }).join(' ');
+                
+                charCounter--; 
+                // === UPDATED: Styling for the Magical Lesson ===
+                if (paragraph.startsWith('The Magical Lesson:')) {
+                    return `<div class="mt-6 p-4 bg-teal-50 border-l-4 border-teal-400 rounded-r-lg"><p class="font-semibold text-teal-800">${words}</p></div>`;
+                }
+                return `<p>${words}</p>`;
+            }).join('');
+            storyTextContent.innerHTML = formattedStory;
+        }
+
+        function setupSpeechSynthesisControls() {
+            ttsControls.innerHTML = `<button id="tts-play" class="custom-btn p-4 bg-white rounded-full shadow-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-cyan-600"><path d="M8 5v14l11-7z"></path></svg></button><button id="tts-pause" class="custom-btn p-4 bg-white rounded-full shadow-md hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-cyan-600"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg></button><button id="tts-stop" class="custom-btn p-4 bg-white rounded-full shadow-md"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="text-cyan-600"><path d="M6 6h12v12H6z"></path></svg></button>`;
+            document.getElementById('tts-play').addEventListener('click', () => { window.speechSynthesis.paused ? window.speechSynthesis.resume() : startSpeech(); });
+            document.getElementById('tts-pause').addEventListener('click', () => { window.speechSynthesis.pause(); });
+            document.getElementById('tts-stop').addEventListener('click', () => { window.speechSynthesis.cancel(); });
+        }
+
+        function startSpeech() {
+            if (storyPlainText.trim() === '') return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(storyPlainText);
+            utterance.voice = window.speechSynthesis.getVoices().find(v => v.lang === 'en-US') || window.speechSynthesis.getVoices()[0];
+            utterance.pitch = 1.1; utterance.rate = 1;
+            utterance.onboundary = (event) => {
+                if (event.name === 'word') {
+                    for (let i = wordBoundaries.length - 1; i >= 0; i--) { if (event.charIndex >= wordBoundaries[i].startChar) { currentWordIndex = i; break; } }
+                    highlightWord(currentWordIndex);
+                }
+            };
+            const playBtn = document.getElementById('tts-play'), pauseBtn = document.getElementById('tts-pause');
+            utterance.onstart = () => { playBtn.classList.add('hidden'); pauseBtn.classList.remove('hidden'); };
+            utterance.onpause = () => { playBtn.classList.remove('hidden'); pauseBtn.classList.add('hidden'); };
+            utterance.onresume = () => { playBtn.classList.add('hidden'); pauseBtn.classList.remove('hidden'); };
+            utterance.onend = () => { playBtn.classList.remove('hidden'); pauseBtn.classList.add('hidden'); highlightWord(-1); };
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function highlightWord(index) {
+            document.querySelector('.highlight-word')?.classList.remove('highlight-word');
+            if (index >= 0) document.getElementById(`word-${index}`)?.classList.add('highlight-word');
+        }
+        function showError(message) { errorMessage.textContent = message; }
+        function clearError() { errorMessage.textContent = ''; }
+        window.speechSynthesis.onvoiceschanged = () => {};
+    </script>
+</body>
+</html>
