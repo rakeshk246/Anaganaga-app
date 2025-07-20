@@ -135,9 +135,9 @@
             clearError();
             if (window.speechSynthesis.speaking) window.speechSynthesis.cancel();
             storyResult.classList.add('hidden'); storyOutput.classList.remove('hidden'); loader.style.display = 'flex'; storyTextContent.innerHTML = ''; storyTitle.textContent = ''; imageContainer.classList.add('hidden'); storyImage.src = '';
-            
-            const backendUrl = 'http://localhost:3000/api/generate';
+            const backendUrl = 'https://anaganaga-app.onrender.com/api/generate';
 
+            
             try {
                 const response = await fetch(backendUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ topic: topic }) });
                 if (!response.ok) { const errData = await response.json(); throw new Error(errData.error || `Server error: ${response.status}`); }
